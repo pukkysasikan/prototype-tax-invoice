@@ -15,11 +15,6 @@
             <ion-grid class="ion-no-padding text-hidden">
 
               <ion-row class="ion-no-padding ion-align-items-center ion-padding-start ion-padding-vertical">
-                <ion-col class="ion-no-padding" size="auto">
-                  <ion-avatar class="avatar-m">
-                    <img :src="require('../assets/imgs/defaultshop.png')">
-                  </ion-avatar>
-                </ion-col>
                 <ion-col class="ion-padding-start">
                   <ion-row>
                     <ion-col size="8">
@@ -45,11 +40,6 @@
             routerLink='/form-address'>
             <ion-grid class="ion-no-padding text-hidden">
               <ion-row class="ion-no-padding ion-align-items-center ion-padding-start ion-padding-vertical">
-                <ion-col class="ion-no-padding" size="auto">
-                  <ion-avatar class="avatar-m">
-                    <img :src="require('../assets/imgs/defaultshop.png')">
-                  </ion-avatar>
-                </ion-col>
                 <ion-col class="ion-padding-start">
                   <ion-row>
                     <ion-col size="8">
@@ -91,7 +81,6 @@ import {
   IonRow,
   IonTitle,
   IonToolbar,
-  IonAvatar,
 } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
@@ -110,7 +99,6 @@ export default defineComponent({
     IonRow,
     IonTitle,
     IonToolbar,
-    IonAvatar,
   }
 });
 </script>

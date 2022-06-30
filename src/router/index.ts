@@ -4,7 +4,7 @@ import { RouteRecordRaw } from 'vue-router';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/tax-address-list'
   },
   {
     path: '/home',
@@ -17,7 +17,8 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/tax-address-list.vue")
   },
   {
-    path: '/form-address',
+    path: '/form-address/:code',
+    props: true,
     name: 'FormAddress',
     component: () => import("@/views/form-address.vue")
   }
