@@ -200,11 +200,7 @@ export default defineComponent({
             list.push({
                 text: 'ยกเลิก',
                 role: 'cancel',
-                handler: () => {
-                    console.log('Cancel clicked');
-                }
             })
-            console.log(list)
             const actionSheet = await actionSheetController
                 .create({
                     header: 'รายการที่อยู่',
@@ -214,17 +210,23 @@ export default defineComponent({
                 });
             await actionSheet.present();
         },
+        fetchData() {
+            api.get("/address.json").then(res => {
+                if (res.data === null) {
+                    this.isStored = "no";
+                } else {
+                    this.isStored = "yes";
+                    this.payload = Object.values(res.data);
+                }
+            })
+            
+        },
     },
     updated() {
-        api.get("/address.json").then(res => {
-            if (res.data === null) {
-                this.isStored = "no";
-            } else {
-                this.isStored = "yes";
-                this.payload = Object.values(res.data);
-            }
-        })
-
+        this.fetchData();
+    },
+    mounted() {
+        this.fetchData();
     }
 });
 </script>
